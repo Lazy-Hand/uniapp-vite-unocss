@@ -1,0 +1,40 @@
+{
+	"editor.formatOnSave": true,
+	"stylelint.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true
+	},
+	"stylelint.validate": [
+		"css",
+		"less",
+		"postcss",
+		"scss",
+		"vue",
+		"sass",
+		"html"
+	],
+	"files.eol": "\n",
+	"recommendations": [
+		"Vue.volar",
+		"Vue.vscode-typescript-vue-plugin"
+	],
+	"cSpell.words": [
+		"Attributify",
+		"automator",
+		"btns",
+		"echart",
+		"echarts",
+		"inited",
+		"kuaishou",
+		"millionsteel",
+		"miniprogram",
+		"persistedstate",
+		"qiun",
+		"quickapp",
+		"stacktracey",
+		"Stic",
+		"toutiao",
+		"ucharts",
+		"wechat"
+	]
+}
