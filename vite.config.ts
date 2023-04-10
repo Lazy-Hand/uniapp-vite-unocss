@@ -10,7 +10,8 @@ export default defineConfig(({ command, mode }) => {
 	const config: UserConfig = {
 		resolve: {
 			alias: {
-				'@': resolve(__dirname, './src')
+				'@': resolve(__dirname, './src'),
+				'axios/lib': resolve(__dirname, './node_modules/axios/lib')
 			}
 		},
 		css: {

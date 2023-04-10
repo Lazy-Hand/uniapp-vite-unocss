@@ -1,6 +1,6 @@
 import { useUserStore } from '@/store'
 import router from '@/router'
-const global = useUserStore()
+
 const showToast = (title: string) => {
 	uni.showToast({
 		title,
@@ -22,9 +22,9 @@ export const checkStatus = (status: number): void => {
 		case 401:
 			showToast('登录失效(401)')
 			// 这里可以做清空storage并跳转到登录页的操作
+			const userStore = useUserStore()
+			userStore.resetUser()
 			router.navigate('login')
-			global.setToken(null)
-			global.setUserInfo(null)
 			break
 		case 403:
 			showToast('拒绝访问(403)')

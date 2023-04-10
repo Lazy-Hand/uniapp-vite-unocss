@@ -5,9 +5,11 @@ import router from '@/router'
 import { useUserStore } from '@/store'
 const userStore = useUserStore()
 const logOut = async () => {
-	await reqLogout()
-	userStore.resetUser()
-	router.navigate('login')
+	const res = await reqLogout()
+	if (res.code === 200) {
+		userStore.resetUser()
+		router.navigate('login')
+	}
 }
 </script>
 <template>
