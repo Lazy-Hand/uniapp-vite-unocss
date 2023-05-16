@@ -55,13 +55,16 @@ onMounted(() => {
 })
 const test = () => {
 	option.value.series[0].data = [
-		{ value: 335, name: '直接访问' },
-		{ value: 1685, name: '邮件营销' },
-		{ value: 234, name: '联盟广告' },
-		{ value: 135, name: '视频广告' },
-		{ value: 1548, name: '搜索引擎' }
+		{ value: random(), name: '直接访问' },
+		{ value: random(), name: '邮件营销' },
+		{ value: random(), name: '联盟广告' },
+		{ value: random(), name: '视频广告' },
+		{ value: random(), name: '搜索引擎' }
 	]
-	uniChartRef.value.setOption!(option.value)
+	uniChartRef.value.setOption(option.value)
+}
+const random = () => {
+	return Math.floor(Math.random() * (1500 - 300 + 1)) + 300
 }
 </script>
 <style lang="scss">

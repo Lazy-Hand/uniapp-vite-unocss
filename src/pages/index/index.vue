@@ -7,6 +7,10 @@
 		</view>
 		<uni-badge text="1"></uni-badge>
 		<nut-cell title="我是标题" desc="描述文字"></nut-cell>
+		<nut-cell>
+			<nut-trend-arrow :sync-text-color="false" :rate="1" />
+			<nut-trend-arrow :sync-text-color="false" :rate="-0.2535" />
+		</nut-cell>
 		<Tabbar />
 	</view>
 </template>

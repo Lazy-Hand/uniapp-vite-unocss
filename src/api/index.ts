@@ -6,13 +6,12 @@ import { ResultEnum } from '@/enums/httpEnum'
 import { checkStatus } from './helper/checkStatus'
 import type { ResultData } from '@/api/interface'
 import { useUserStore } from '@/store'
-
 let baseURL: string
 // #ifdef H5
-baseURL = process.env.NODE_ENV === 'production' ? import.meta.env.VITE_API_URL : '/api'
+baseURL = import.meta.env.VITE_API_URL
 // #endif
 // #ifndef H5
-baseURL = import.meta.env.VITE_API_URL
+baseURL = JSON.parse(import.meta.env.VITE_PROXY)[0][1] as string
 // #endif
 const config = {
 	baseURL,

@@ -4,20 +4,9 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.stylelint": true
 	},
-	"stylelint.validate": [
-		"css",
-		"less",
-		"postcss",
-		"scss",
-		"vue",
-		"sass",
-		"html"
-	],
+	"stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass", "html"],
 	"files.eol": "\n",
-	"recommendations": [
-		"Vue.volar",
-		"Vue.vscode-typescript-vue-plugin"
-	],
+	"recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"],
 	"cSpell.words": [
 		"Attributify",
 		"automator",
@@ -36,5 +25,6 @@
 		"toutiao",
 		"ucharts",
 		"wechat"
-	]
+	],
+	"typescript.tsdk": "node_modules\\typescript\\lib"
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTabbarStore } from '@/store'
 const tabbar = useTabbarStore()
-const tabSwitch = (item: any, index: number) => {
+const tabSwitch = (_item: any, index: number) => {
 	tabbar.switchTab(index)
 }
 </script>

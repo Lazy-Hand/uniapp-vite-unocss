@@ -1,18 +1,33 @@
-import { defineConfig, loadEnv, UserConfig } from 'vite'
-import uni from '@dcloudio/vite-plugin-uni'
+import { defineConfig, loadEnv, ConfigEnv, UserConfig } from 'vite'
 import { resolve } from 'path'
-import { wrapperEnv } from './src/utils/getEnv'
-import Unocss from 'unocss/vite'
+import { wrapperEnv } from './build/getEnv'
+import { createVitePlugins } from './build/plugins'
+import { createProxy } from './build/proxy'
+import pkg from './package.json'
+import dayjs from 'dayjs'
+const { dependencies, devDependencies, name, version } = pkg
+const __APP_INFO__ = {
+	pkg: { dependencies, devDependencies, name, version },
+	lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss')
+}
+
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
-	const env = loadEnv(mode, process.cwd())
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
+	const root = process.cwd()
+	const env = loadEnv(mode, root)
 	const viteEnv = wrapperEnv(env)
-	const config: UserConfig = {
+	return {
+		base: viteEnv.VITE_PUBLIC_PATH,
+		root,
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, './src'),
-				'axios/lib': resolve(__dirname, './node_modules/axios/lib')
+				'axios/lib': resolve(__dirname, './node_modules/axios/lib'),
+				'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
 			}
+		},
+		define: {
+			__APP_INFO__: JSON.stringify(__APP_INFO__)
 		},
 		css: {
 			preprocessorOptions: {
@@ -21,31 +36,14 @@ export default defineConfig(({ command, mode }) => {
 				}
 			}
 		},
-		define: {
-			'process.env': viteEnv
-		},
-		plugins: [uni(), Unocss()],
+		plugins: createVitePlugins(),
 		server: {
-			port: viteEnv.VITE_PORT, // 设置服务启动端口号
-			open: true,
-			cors: true, // 允许跨域
 			host: '0.0.0.0',
-			// 设置代理，根据我们项目实际情况配置
-			// #ifdef H5
-			proxy: {
-				'/api': {
-					target: viteEnv.VITE_API_URL,
-					changeOrigin: true,
-					rewrite: path => path.replace(/^\/api/, '')
-				}
-			}
-			// #endif
+			port: viteEnv.VITE_PORT,
+			open: viteEnv.VITE_OPEN,
+			cors: true,
+			// Load proxy configuration from .env.development
+			proxy: createProxy(viteEnv.VITE_PROXY)
 		}
 	}
-	if (command === 'serve') {
-		// 仅开发
-		return config
-	}
-	// 生产
-	return config
 })
