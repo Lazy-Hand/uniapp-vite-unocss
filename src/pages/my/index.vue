@@ -6,7 +6,6 @@ import { useUserStore } from '@/store'
 const userStore = useUserStore()
 const logOut = async () => {
 	const res = await reqLogout()
-	console.log(res)
 
 	if (res.code === 200) {
 		userStore.resetUser()

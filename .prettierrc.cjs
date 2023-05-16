@@ -19,6 +19,8 @@ module.exports = {
 	trailingComma: 'none',
 	// 在JSX中使用单引号而不是双引号
 	jsxSingleQuote: false,
+	// 将 > 多行元素放在最后一行的末尾，而不是单独放在下一行 (true：放末尾，false：单独一行)
+	bracketSameLine: false,
 	//  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号 ,always：不省略括号
 	arrowParens: 'avoid',
 	// 如果文件顶部已经有一个 doclock，这个选项将新建一行注释，并打上@format标记。
@@ -33,7 +35,6 @@ module.exports = {
 	endOfLine: 'auto',
 	// 这两个选项可用于格式化以给定字符偏移量（分别包括和不包括）开始和结束的代码
 	rangeStart: 0,
-	rangeEnd: Infinity,
+	rangeEnd: Infinity
 	// Vue文件脚本和样式标签缩进
-	vueIndentScriptAndStyle: false
 }

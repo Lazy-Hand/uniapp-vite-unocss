@@ -55,7 +55,6 @@ class Router {
 	}
 	public back({ delta, data }: BackParams = { delta: 1, data: null }) {
 		const currentRoute = getCurrentPages().pop()
-		console.log(currentRoute)
 
 		// @ts-expect-error
 		const eventName = currentRoute?.options.eventName

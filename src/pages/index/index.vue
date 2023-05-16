@@ -11,6 +11,9 @@
 			<nut-trend-arrow :sync-text-color="false" :rate="1" />
 			<nut-trend-arrow :sync-text-color="false" :rate="-0.2535" />
 		</nut-cell>
+		<nut-drag direction="x" :attract="true">
+			<nut-button type="primary">触摸移动</nut-button>
+		</nut-drag>
 		<Tabbar />
 	</view>
 </template>

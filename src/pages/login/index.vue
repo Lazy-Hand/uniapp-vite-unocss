@@ -17,7 +17,7 @@ const state = reactive<LoginForm>({
 	phoneNum: '',
 	code: '',
 	wechatCode: '',
-	checkbox: true
+	checkbox: false
 })
 const getCode = () => {
 	if (!state.checkbox)

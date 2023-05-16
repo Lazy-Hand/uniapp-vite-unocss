@@ -5,6 +5,7 @@ import { createVitePlugins } from './build/plugins'
 import { createProxy } from './build/proxy'
 import pkg from './package.json'
 import dayjs from 'dayjs'
+import TransformPages from 'uni-read-pages-vite'
 const { dependencies, devDependencies, name, version } = pkg
 const __APP_INFO__ = {
 	pkg: { dependencies, devDependencies, name, version },
@@ -27,7 +28,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			}
 		},
 		define: {
-			__APP_INFO__: JSON.stringify(__APP_INFO__)
+			__APP_INFO__: JSON.stringify(__APP_INFO__),
+			ROUTES: new TransformPages().routes // 注入路由表
 		},
 		css: {
 			preprocessorOptions: {
