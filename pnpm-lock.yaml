@@ -141,12 +141,6 @@ devDependencies:
   typescript:
     specifier: ^4.9.5
     version: registry.npmmirror.com/typescript@4.9.5
-  uni-mini-router:
-    specifier: ^0.0.12
-    version: registry.npmmirror.com/uni-mini-router@0.0.12
-  uni-read-pages-vite:
-    specifier: ^0.0.6
-    version: registry.npmmirror.com/uni-read-pages-vite@0.0.6
   unocss:
     specifier: ^0.51.2
     version: registry.npmmirror.com/unocss@0.51.2(postcss@8.4.23)(vite@4.3.6)
@@ -11250,24 +11244,12 @@ packages:
       jiti: registry.npmmirror.com/jiti@1.18.2
     dev: true
 
-  registry.npmmirror.com/uni-mini-router@0.0.12:
-    resolution: {integrity: sha512-b6nvpa3RfCGhOloIALo7+jLjuDztOpfC0M8tzp4kUzlexx2etDTPDLxRFRUeu5F4kQp1YQXJtC4xa9ezK6RHjg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/uni-mini-router/-/uni-mini-router-0.0.12.tgz}
-    name: uni-mini-router
-    version: 0.0.12
-    dev: true
-
   registry.npmmirror.com/uni-nutui@1.5.3:
     resolution: {integrity: sha512-L67JiICUsviszcuHiHMou+iapdO/QCJ4saTTiyv3zexgSZnklmpl0gXGZUEIDAgkFV/8aMMkoUtKsfYvzzHUqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/uni-nutui/-/uni-nutui-1.5.3.tgz}
     name: uni-nutui
     version: 1.5.3
     engines: {HBuilderX: ^3.5.3}
     dev: false
-
-  registry.npmmirror.com/uni-read-pages-vite@0.0.6:
-    resolution: {integrity: sha512-x86B6RcueeCKzLujbnv53WrzD/bTm2aQclXR7tXrLQzky0TKKihfWRgTS2qOC2ARXntoN07rD9jfZbGfYj28yQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/uni-read-pages-vite/-/uni-read-pages-vite-0.0.6.tgz}
-    name: uni-read-pages-vite
-    version: 0.0.6
-    dev: true
 
   registry.npmmirror.com/unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-2.0.0.tgz}
