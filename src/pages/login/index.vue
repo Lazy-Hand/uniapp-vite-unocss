@@ -56,6 +56,11 @@ const login = () => {
 			title: '请输入验证码',
 			icon: 'error'
 		})
+	// #ifdef H5
+	setLogin()
+	// #endif
+
+	// #ifndef H5
 	uni.login({
 		provider: 'weixin',
 		success: res => {
@@ -63,8 +68,9 @@ const login = () => {
 			setLogin(res.code)
 		}
 	})
+	// #endif
 }
-const setLogin = async (code: string) => {
+const setLogin = async (code: string = '') => {
 	const { data } = await reqLogin({ ...state, wechatCode: code })
 	userStore.setToken(data.token)
 	userStore.setUserInfo(data.user)
