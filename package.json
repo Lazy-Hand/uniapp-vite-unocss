@@ -89,6 +89,7 @@
 		"eslint-plugin-vue": "^9.10.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.1",
+		"miniprogram-api-typings": "^3.9.1",
 		"prettier": "^2.8.7",
 		"sass": "^1.61.0",
 		"standard-version": "^9.5.0",
