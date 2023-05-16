@@ -1,5 +1,6 @@
-import { StorageKeys } from '@/interface/storage'
+export type StorageKeys = 'token' | 'User' | 'URL'
 
+export type ObjectType<T> = T extends 'token' ? string : T extends 'User' ? object : never
 interface StorageCla {
 	set: <T>(key: StorageKeys, initValue: T) => void
 	get: <T>(key: StorageKeys) => Result<T | null>

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { Tabbar } from '@/interface/tabbar'
+import { Tabbar } from '../interface'
 import router from '@/router'
 export const useTabbarStore = defineStore('tabbar', () => {
 	const tabbarList = ref<Tabbar[]>([
