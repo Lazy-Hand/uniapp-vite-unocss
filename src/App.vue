@@ -14,4 +14,8 @@ onLaunch(options => {
 </script>
 <style lang="scss">
 @import 'uni-nutui/components/sky-nutui/app.scss';
+page {
+	padding-bottom: constant(safe-area-inset-bottom);
+	padding-bottom: env(safe-area-inset-bottom);
+}
 </style>
