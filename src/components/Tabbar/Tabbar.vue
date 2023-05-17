@@ -13,7 +13,7 @@ const tabSwitch = (_item: any, index: number) => {
 		placeholder
 		safe-area-inset-bottom
 		v-model:visible="tabbar.tabBarActive"
-		active-color="#2979ff"
+		active-color="$primary-color"
 		size="40rpx"
 	>
 		<nut-tabbar-item :tab-title="item.title" :icon="item.icon" v-for="item in tabbar.tabbarList" :key="item.id"></nut-tabbar-item>
