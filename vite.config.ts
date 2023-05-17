@@ -41,7 +41,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `@import "uni-nutui/components/sky-nutui/packages/styles/variables.scss"; @import "@/static/styles/var.scss";`
+					additionalData: `@import "@/styles/var.scss";`
 				}
 			}
 		},
