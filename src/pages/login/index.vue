@@ -86,17 +86,17 @@ const agreement = (url: string) => {
 		<view class="logo-box"><image :src="logo.activeLogo"></image></view>
 		<view class="login-card">
 			<view class="username">
-				<nut-input v-model="state.phoneNum" placeholder="请输入手机号" left-icon="my" :border="false" />
+				<nut-input v-model="state.phoneNum" placeholder="请输入手机号" left-icon="my" :border="false" w-full />
 			</view>
 			<view class="code">
-				<nut-input v-model="state.code" placeholder="请输入短信验证码" :border="false" left-icon="tips">
+				<nut-input v-model="state.code" placeholder="请输入短信验证码" :border="false" left-icon="tips" w-full>
 					<template #button>
 						<nut-button size="small" type="primary" @click="getCode">发送验证码</nut-button>
 					</template>
 				</nut-input>
 			</view>
 			<view><nut-button block type="primary" size="large" @click="login">登录</nut-button></view>
-			<view style="margin-top: 40rpx; margin-left: 20rpx; display: flex">
+			<view style="margin-top: 40rpx; margin-left: 20rpx; display: flex; align-items: center">
 				<nut-checkbox v-model="state.checkbox" />
 				<view style="font-size: 24rpx">
 					登录即代表同意
@@ -141,26 +141,36 @@ const agreement = (url: string) => {
 			border: 1rpx solid #ccc;
 			border-radius: 8rpx;
 			margin-bottom: 42rpx;
-			height: 95rpx;
-			padding-top: 8rpx;
-			box-sizing: border-box;
+			height: 80rpx;
+			display: flex;
+			align-items: center;
 		}
 		.code {
 			border: 1rpx solid #ccc;
 			border-radius: 8rpx;
-			margin-bottom: 100rpx;
-			height: 95rpx;
-			padding-top: 5rpx;
+			margin-bottom: 80rpx;
+			height: 80rpx;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 		}
 	}
 	::v-deep .nut-checkbox {
 		width: 25rpx;
 		.nut-checkbox__icon {
-			color: #496cf2;
+			color: $primary-color;
 		}
 	}
+	::v-deep .nut-input {
+		height: 60rpx;
+		line-height: 60rpx;
+		padding-top: 0;
+		padding-bottom: 0;
+		display: flex;
+		align-items: center;
+	}
 	.agreement {
-		color: $uniapp-color;
+		color: $primary-color;
 	}
 }
 </style>

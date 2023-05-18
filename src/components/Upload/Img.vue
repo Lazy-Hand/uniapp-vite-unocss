@@ -1,15 +1,13 @@
 <template>
-	<view class="upload">
-		<uni-file-picker
-			v-bind="$attrs"
-			:limit="props.limit"
-			:title="`最多选择${props.limit}张图片`"
-			:auto-upload="false"
-			v-model="imgList"
-			@select="select"
-			@delete="HandleDelete"
-		></uni-file-picker>
-	</view>
+	<uni-file-picker
+		v-bind="$attrs"
+		:limit="props.limit"
+		:title="`最多选择${props.limit}张图片`"
+		:auto-upload="false"
+		v-model="imgList"
+		@select="select"
+		@delete="HandleDelete"
+	></uni-file-picker>
 </template>
 
 <script setup lang="ts">

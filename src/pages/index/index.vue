@@ -13,7 +13,6 @@
 			<text text-green>{{ state.title }}</text>
 			<i icon-btn i-carbon-moon />
 		</nut-cell>
-		<uni-badge text="1"></uni-badge>
 		<nut-cell title="我是标题" desc="描述文字"></nut-cell>
 		<nut-cell>
 			<nut-trend-arrow :sync-text-color="false" :rate="1" />
