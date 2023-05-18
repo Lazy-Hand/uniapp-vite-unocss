@@ -1,6 +1,8 @@
-import Tabbar from '@/pages/components/Tabbar/Tabbar.vue'
+import Tabbar from '@/components/Tabbar/Tabbar.vue'
+import UploadImg from '@/components/Upload/Img.vue'
 declare module 'vue' {
-	interface GlobalComponents {
+	export interface GlobalComponents {
 		Tabbar: typeof Tabbar
+		UploadImg: typeof UploadImg
 	}
 }

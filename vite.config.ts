@@ -53,9 +53,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			cors: true,
 			// Load proxy configuration from .env.development
 			proxy: createProxy(viteEnv.VITE_PROXY)
-		},
-		build: {
-			sourcemap: true
 		}
 	}
 })
