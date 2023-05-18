@@ -10,19 +10,26 @@ let baseURL: string
 // #ifdef H5
 baseURL = import.meta.env.VITE_API_URL
 // #endif
+
 // #ifndef H5
-baseURL = JSON.parse(import.meta.env.VITE_PROXY)[0][1] as string
+baseURL =
+	import.meta.env.VITE_USER_NODE_ENV === 'development'
+		? (JSON.parse(import.meta.env.VITE_PROXY)[0][1] as string)
+		: import.meta.env.VITE_API_URL
 // #endif
+
 const config = {
 	baseURL,
 	timeout: ResultEnum.TIMEOUT as number,
 	withCredentials: true
 }
+
 export class Request {
 	// axios实例
 	instance: AxiosInstance
 	constructor(config: AxiosRequestConfig) {
 		this.instance = axios.create(config)
+		// 初始化请求拦截器
 		this.instance.interceptors.request.use(
 			(config: InternalAxiosRequestConfig) => {
 				uni.showLoading({
@@ -40,6 +47,7 @@ export class Request {
 				return Promise.reject(err)
 			}
 		)
+		// 响应拦截器
 		this.instance.interceptors.response.use(
 			(res: AxiosResponse) => {
 				const { data } = res
@@ -52,7 +60,7 @@ export class Request {
 				if (err.message.indexOf('timeout') !== -1)
 					uni.showToast({
 						title: '请求超时！请稍后重试',
-						icon: 'error',
+						icon: 'none',
 						mask: true
 					})
 				// 根据响应的错误状态码，做不同的处理
@@ -60,6 +68,7 @@ export class Request {
 				return Promise.reject(err.response)
 			}
 		)
+
 		this.instance.defaults.adapter = (config: any) => {
 			return new Promise((resolve, reject) => {
 				uni.request({

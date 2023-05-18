@@ -91,11 +91,11 @@ const agreement = (url: string) => {
 			<view class="code">
 				<nut-input v-model="state.code" placeholder="请输入短信验证码" :border="false" left-icon="tips">
 					<template #button>
-						<nut-button size="small" type="info" @click="getCode">发送验证码</nut-button>
+						<nut-button size="small" type="primary" @click="getCode">发送验证码</nut-button>
 					</template>
 				</nut-input>
 			</view>
-			<view><nut-button block type="info" size="large" @click="login">登录</nut-button></view>
+			<view><nut-button block type="primary" size="large" @click="login">登录</nut-button></view>
 			<view style="margin-top: 40rpx; margin-left: 20rpx; display: flex">
 				<nut-checkbox v-model="state.checkbox" />
 				<view style="font-size: 24rpx">
