@@ -15,7 +15,7 @@ const logOut = async () => {
 </script>
 <template>
 	<view>
-		<nut-button type="primary" @click="logOut">退出登录</nut-button>
+		<vin-button type="primary" @click="logOut">退出登录</vin-button>
 		<Tabbar />
 	</view>
 </template>

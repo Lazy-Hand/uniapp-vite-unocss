@@ -10,7 +10,7 @@ const test = () => {
 </script>
 <template>
 	<view>
-		<nut-button type="info" @click="test">toast</nut-button>
+		<vin-button type="info" @click="test">toast</vin-button>
 		<Tabbar />
 	</view>
 </template>

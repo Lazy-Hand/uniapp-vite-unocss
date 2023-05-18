@@ -24,6 +24,7 @@
 		"Stic",
 		"toutiao",
 		"ucharts",
+		"vingogo",
 		"wechat"
 	],
 	"typescript.tsdk": "node_modules\\typescript\\lib"

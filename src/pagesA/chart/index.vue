@@ -1,7 +1,7 @@
 <template>
 	<view class="echartsPage">
 		<uni-chart ref="uniChartRef" />
-		<nut-button type="primary" @click="test">测试</nut-button>
+		<vin-button type="primary" @click="test">测试</vin-button>
 	</view>
 </template>
 

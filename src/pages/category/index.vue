@@ -16,9 +16,10 @@ const test = () => {
 </script>
 <template>
 	<view>
-		<nut-button type="primary" @click="toChart">跳转screen</nut-button>
-		<nut-button type="primary" @click="toChart1">跳转charts</nut-button>
-		<nut-button type="primary" @click="test">查看图片列表</nut-button>
+		<vin-button type="primary" @click="toChart">跳转screen</vin-button>
+		<vin-button type="primary" @click="toChart1">跳转charts</vin-button>
+		<vin-button type="primary" @click="test">查看图片列表</vin-button>
+		<vin-uploader url=""></vin-uploader>
 		<UploadImg v-model:imgList="imgList" />
 		<Tabbar />
 	</view>

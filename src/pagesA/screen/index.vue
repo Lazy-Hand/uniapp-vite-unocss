@@ -1,34 +1,34 @@
 <template>
 	<view>
-		<nut-tabs v-model="tabValue" title-scroll title-gutter="10" name="tab4value" :auto-height="true" @change="tabChange">
-			<nut-tab-pane title="今日统计" pane-key="0">
+		<vin-tabs v-model="tabValue" title-scroll title-gutter="10" name="tab4value" :auto-height="true" @change="tabChange">
+			<vin-tabpane title="今日统计" pane-key="0">
 				<DatStic v-if="tabValue === '0'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="客户分布图" pane-key="1">
+			</vin-tabpane>
+			<vin-tabpane title="客户分布图" pane-key="1">
 				<Map v-if="tabValue === '1'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="历史累计" pane-key="2">
+			</vin-tabpane>
+			<vin-tabpane title="历史累计" pane-key="2">
 				<Total v-if="tabValue === '2'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="实时库存" pane-key="3">
+			</vin-tabpane>
+			<vin-tabpane title="实时库存" pane-key="3">
 				<RealTime v-if="tabValue === '3'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="销量出货趋势图" pane-key="4">
+			</vin-tabpane>
+			<vin-tabpane title="销量出货趋势图" pane-key="4">
 				<Shipment v-if="tabValue === '4'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="销量TOP10" pane-key="5">
+			</vin-tabpane>
+			<vin-tabpane title="销量TOP10" pane-key="5">
 				<SalesTop v-if="tabValue === '5'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="客单统计" pane-key="6">
+			</vin-tabpane>
+			<vin-tabpane title="客单统计" pane-key="6">
 				<GuestList v-if="tabValue === '6'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="业绩统计" pane-key="7">
+			</vin-tabpane>
+			<vin-tabpane title="业绩统计" pane-key="7">
 				<Performance v-if="tabValue === '7'" />
-			</nut-tab-pane>
-			<nut-tab-pane title="最新订单" pane-key="8">
+			</vin-tabpane>
+			<vin-tabpane title="最新订单" pane-key="8">
 				<Newest v-if="tabValue === '8'" />
-			</nut-tab-pane>
-		</nut-tabs>
+			</vin-tabpane>
+		</vin-tabs>
 	</view>
 </template>
 

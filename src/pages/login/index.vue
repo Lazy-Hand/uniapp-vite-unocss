@@ -86,18 +86,18 @@ const agreement = (url: string) => {
 		<view class="logo-box"><image :src="logo.activeLogo"></image></view>
 		<view class="login-card">
 			<view class="username">
-				<nut-input v-model="state.phoneNum" placeholder="请输入手机号" left-icon="my" :border="false" />
+				<vin-input v-model="state.phoneNum" placeholder="请输入手机号" left-icon="my" :border="false" />
 			</view>
 			<view class="code">
-				<nut-input v-model="state.code" placeholder="请输入短信验证码" :border="false" left-icon="tips">
+				<vin-input v-model="state.code" placeholder="请输入短信验证码" :border="false" left-icon="tips">
 					<template #button>
-						<nut-button size="small" type="primary" @click="getCode">发送验证码</nut-button>
+						<vin-button size="small" type="primary" @click="getCode">发送验证码</vin-button>
 					</template>
-				</nut-input>
+				</vin-input>
 			</view>
-			<view><nut-button block type="primary" size="large" @click="login">登录</nut-button></view>
-			<view style="margin-top: 40rpx; margin-left: 20rpx; display: flex">
-				<nut-checkbox v-model="state.checkbox" />
+			<view><vin-button block type="primary" size="large" @click="login">登录</vin-button></view>
+			<view style="margin-top: 40rpx; margin-left: 20rpx; display: flex; align-items: center">
+				<vin-checkbox v-model="state.checkbox" />
 				<view style="font-size: 24rpx">
 					登录即代表同意
 					<text class="agreement" @click="agreement('https://data.millionsteel.com/xieyi/uagreement.html')">《用户协议》</text>
@@ -153,14 +153,14 @@ const agreement = (url: string) => {
 			padding-top: 5rpx;
 		}
 	}
-	::v-deep .nut-checkbox {
-		width: 25rpx;
-		.nut-checkbox__icon {
-			color: #496cf2;
+	::v-deep .vin-checkbox {
+		margin-right: 0;
+		.vin-checkbox__icon {
+			color: $primary-color;
 		}
 	}
 	.agreement {
-		color: $uniapp-color;
+		color: $primary-color;
 	}
 }
 </style>

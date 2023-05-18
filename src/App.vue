@@ -12,6 +12,4 @@ onLaunch(options => {
 	}
 })
 </script>
-<style lang="scss">
-@import 'uni-nutui/components/sky-nutui/app.scss';
-</style>
+<style lang="scss"></style>
